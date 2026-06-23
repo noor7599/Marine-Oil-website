@@ -1,0 +1,71 @@
+{
+  "data": {
+    "raw_dir": "data/raw",
+    "processed_dir": "data/processed",
+    "outputs_dir": "outputs",
+    "animations_dir": "outputs/animations",
+    "figures_dir": "outputs/figures",
+    "logs_dir": "logs"
+  },
+  "extraction": {
+    "tiff_patterns": [
+      "*.tif",
+      "*.tiff"
+    ]
+  },
+  "download": {
+    "cds_api_key": null,
+    "cmems_username": null,
+    "cmems_password": null,
+    "era5_grid_resolution": 0.25,
+    "era5_padding": 0.25,
+    "cmems_dataset_id": "cmems_mod_glo_phy_my_0.083deg_P1D-m"
+  },
+  "simulation": {
+    "oil_type": "GENERIC MEDIUM CRUDE",
+    "coastline_action": "previous",
+    "num_particles": 1000,
+    "duration_hours": 24,
+    "horizontal_diffusivity": 1.0,
+    "wind_uncertainty": 0.2,
+    "current_uncertainty": 0.1
+  },
+  "pg_classifier": {
+    "darkness_threshold": -15.0,
+    "smoothness_threshold": 1.5,
+    "elongation_min": 1.8,
+    "compactness_min": 2.0,
+    "alignment_tolerance": 40.0,
+    "trajectory_distance_threshold": 10.0,
+    "drift_time_window": [
+      1,
+      2
+    ]
+  },
+  "rf_classifier": {
+    "model_path": "../models/rf_classifier.pkl",
+    "feature_columns": [
+      "mean_intensity",
+      "std_intensity",
+      "elongation_ratio",
+      "compactness"
+    ]
+  },
+  "decision_layer": {
+    "cv_weight": 0.3,
+    "pg_weight": 0.3,
+    "rf_weight": 0.1,
+    "nlp_weight": 0.3,
+    "confidence_threshold": 0.5
+  },
+  "cv_model": {
+    "quick_inference_path": "D:\\L4 S1\\Graduation Project in AI (I)\\cv\\mados",
+    "model_type": "marinext",
+    "fallback_enabled": false,
+    "darkness_threshold": -18.0,
+    "_notes": {
+      "quick_inference": "MariNeXt CV model wrapper. Requires: mmcv, mmseg, marinext",
+      "installation": "pip install mmcv mmseg-custom marinext torch torchvision"
+    }
+  }
+}

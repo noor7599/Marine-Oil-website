@@ -1,0 +1,1 @@
+python src/main/main_pipeline.py --image "/Users/mac/Downloads/all project/graduation-project/backend/oilspill_analysis/data/raw/2023-03-18-00_00_2023-03-18-23_59_Sentinel-1_IW_VV+VH_VV_-_decibel_gamma0(zoomed).tiff" --csv "/Users/mac/Downloads/all project/graduation-project/backend/oilspill_analysis/data/raw/incidents_balanced_cleaned.csv"

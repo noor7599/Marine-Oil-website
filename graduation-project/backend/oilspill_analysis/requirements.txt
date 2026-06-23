@@ -1,0 +1,40 @@
+# Oil Spill Analysis Pipeline - Requirements
+# CORE ENVIRONMENT (oilspill - Python 3.9)
+# Install with: pip install -r requirements.txt
+
+# Core data processing (numpy pinned to avoid opencv-python conflicts)
+numpy>=1.21,<2.0
+pandas>=1.3.0
+scipy>=1.7.0
+scikit-learn>=1.0.0
+
+# Geospatial and remote sensing
+rasterio>=1.2.0
+rasterio[s3]>=1.2.0
+Pillow>=8.0.0
+
+# Ocean simulation (pinned for Python 3.9 compatibility)
+opendrift==1.11.0
+netCDF4>=1.5.0
+xarray>=0.18.0
+
+# Copernicus data download (FIXED: version 0.6.0 doesn't exist)
+cdsapi==0.7.7
+copernicusmarine>=2.0.0
+cmocean>=2.0,<3.0
+
+# Machine learning utilities
+joblib>=1.0.0
+
+# Visualization (optional but recommended)
+matplotlib>=3.3.0
+
+# Utilities
+python-dateutil>=2.8.0
+
+# NLP / incident validation
+geopy>=2.4.0
+reportlab>=3.6.0
+
+# CV dependencies (install separately AFTER core requirements)
+# opencv-python>=4.5.0

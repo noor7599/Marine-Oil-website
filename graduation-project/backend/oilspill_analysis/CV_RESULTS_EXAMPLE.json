@@ -1,0 +1,18 @@
+{
+  "status": "success",
+  "detected": true,
+  "oil_pixels": 98726,
+  "total_pixels": 4392500,
+  "oil_percentage": 2.25,
+  "confidence": 0.75,
+  "confidence_calculation": {
+    "method": "softmax_per_class_average",
+    "source": "MariNeXt model softmax probabilities",
+    "formula": "Weighted average of P(oil_class_6 | pixel) for pixels predicted as oil",
+    "interpretation": "Model's average certainty (0-1) that detected oil pixels are actually oil spill: 75.0%"
+  },
+  "mask_path": "data/processed/sentinel_a1b2c3d4_oil_binary.npy",
+  "multiclass_mask_path": "data/processed/sentinel_marinext_predictions.tiff",
+  "visualization_path": "data/processed/sentinel_cv_visualization.png",
+  "model": "marinext"
+}

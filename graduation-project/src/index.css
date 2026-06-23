@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 213 58% 11%;
+    --foreground: 60 6% 88%;
+
+    --card: 216 40% 16%;
+    --card-foreground: 60 6% 88%;
+
+    --popover: 216 40% 16%;
+    --popover-foreground: 60 6% 88%;
+
+    --primary: 210 50% 36%;
+    --primary-foreground: 60 6% 93%;
+
+    --secondary: 213 58% 11%;
+    --secondary-foreground: 60 6% 88%;
+
+    --muted: 216 30% 22%;
+    --muted-foreground: 210 10% 60%;
+
+    --accent: 186 80% 42%;
+    --accent-foreground: 213 58% 11%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 60 6% 93%;
+
+    --success: 162 60% 45%;
+    --success-foreground: 213 58% 11%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 213 58% 11%;
+
+    --danger: 4 78% 62%;
+    --danger-foreground: 60 6% 93%;
+
+    --border: 216 25% 25%;
+    --input: 216 25% 25%;
+    --ring: 186 80% 42%;
+
+    --radius: 0.5rem;
+
+    --ocean-deep: 213 58% 11%;
+    --ocean-mid: 216 40% 16%;
+    --ocean-surface: 210 22% 37%;
+    --ocean-foam: 60 6% 88%;
+
+    --sidebar-background: 213 58% 9%;
+    --sidebar-foreground: 60 6% 88%;
+    --sidebar-primary: 186 80% 42%;
+    --sidebar-primary-foreground: 213 58% 11%;
+    --sidebar-accent: 216 30% 22%;
+    --sidebar-accent-foreground: 60 6% 88%;
+    --sidebar-border: 216 25% 25%;
+    --sidebar-ring: 186 80% 42%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  code, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* Focus-visible for keyboard navigation */
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-ring rounded-sm;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-md border border-border/50 rounded-lg;
+  }
+
+  .glow-accent {
+    box-shadow: 0 0 20px hsl(186 80% 42% / 0.15);
+  }
+
+  .status-pulse {
+    animation: pulse-glow 3s ease-in-out infinite;
+  }
+
+  .ocean-gradient {
+    background: linear-gradient(135deg, hsl(213 58% 11%), hsl(216 40% 16%), hsl(210 22% 37% / 0.3));
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.35s ease-out forwards;
+}
+
+/* Leaflet overrides */
+.leaflet-container {
+  background: hsl(213 58% 11%) !important;
+  border-radius: 0.5rem;
+}
+
+.leaflet-tile-pane {
+  filter: brightness(0.7) saturate(0.8);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(213 58% 11%);
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(210 22% 37%);
+  border-radius: 3px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-slide-up,
+  .status-pulse {
+    animation: none !important;
+  }
+  * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

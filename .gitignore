@@ -1,0 +1,18 @@
+node_modules/
+.DS_Store
+dist/
+.worktrees/
+*.mjs
+graduation-project/backend/oilspill_analysis/data/processed/
+*.npy
+*.pkl
+*.h5
+*.pt
+*.gif
+**/reports/
+**/visualizations/
+**/pipeline_results.json
+**/cv_results.json
+**/final_report.pdf
+graduation-project/backend/oilspill_analysis/data/processed/runs/*
+graduation-project/backend/oilspill_analyspython src/main/main_pipeline.py --image data/raw/2023-05-17-00_00_2023-05-17-23_59_Sentinel-1_IW_VV+VH_VV_-_decibel_gamma(1).tiff --csvproject/backend/oilspill_analysis/data/processed/runs/.gitkeep

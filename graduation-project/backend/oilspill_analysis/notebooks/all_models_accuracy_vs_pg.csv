@@ -1,0 +1,5 @@
+Model,Accuracy,Accuracy %,Correct,Total
+Random Forest,1.0,100.00%,1,1
+Gradient Boosting,1.0,100.00%,1,1
+SVM,1.0,100.00%,1,1
+Logistic Regression,1.0,100.00%,1,1
